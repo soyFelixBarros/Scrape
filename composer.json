@@ -1,0 +1,21 @@
+{
+    "name": "felix/scrape",
+    "description": "Caja de herramientas para raspar una web.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Felix Barros",
+            "email": "soyFelixBarros@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/dom-crawler": "^3.2",
+        "symfony/filesystem": "^3.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~5.0"
+    },
+    "autoload": {
+        "psr-4": {"Felix\\Scrape\\": "src"}
+    }
+}
