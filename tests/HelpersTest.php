@@ -17,4 +17,11 @@ class HelpersTest extends PHPUnit_Framework_TestCase
 
 		$this->assertEquals('string', $str);
 	}
+
+	public function testSimilarStr()
+	{
+		$int = $this->helpers->similar_str('string1', 'string2');
+
+		$this->assertEquals(0, $int);
+	}
 }
