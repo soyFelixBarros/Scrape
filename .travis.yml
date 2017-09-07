@@ -1,5 +1,7 @@
 language: php
 
+sudo: required
+
 php:
   - 5.4
   - 5.5
@@ -8,10 +10,13 @@ php:
   - 7.1
   - hhvm
 
-sudo: false
-
 before_script:
   - composer self-update
-  - composer install --prefer-source --no-interaction --dev
+  - composer install --no-interaction --prefer-source
+  - composer dump-autoload
 
 script: vendor/bin/phpunit
+
+branches:
+  only:
+    - master
