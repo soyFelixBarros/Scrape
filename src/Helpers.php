@@ -7,8 +7,7 @@ class Helpers
 	/**
 	 * Eliminar espacios de una cadena.
 	 * 
-	 * @param string $str Cada de texto.
-	 *
+	 * @param  string $str Cada de texto.
 	 * @return string
 	 */
 	public function clear_text($str)
