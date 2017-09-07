@@ -1,6 +1,7 @@
 {
     "name": "felix/scrape",
     "description": "Caja de herramientas para raspar una web.",
+    "type": "project",
     "license": "MIT",
     "authors": [
         {
@@ -9,6 +10,7 @@
         }
     ],
     "require": {
+        "php": ">=5.4.8",
         "symfony/dom-crawler": "^3.2",
         "symfony/filesystem": "^3.3"
     },
