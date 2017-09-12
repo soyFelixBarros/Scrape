@@ -2,15 +2,15 @@
 
 require_once __DIR__ . "/vendor/autoload.php";
 
-use Felix\Scrape\Helpers;
+use Felix\Scrape\Str;
 use Symfony\Component\DomCrawler\Crawler;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 
-$helpers = new Helpers;
+$str = new Str;
 
-$str1 = 'Desalmados: abandonan a una beba recién nacida en Machagai';
-$str2 = 'Chaco: Escucharon un llanto y encontraron una bebé cubierta de pasto y tierra';
+$str1 = 'string2';
+$str2 = 'string2';
 
 // $lev = levenshtein($str1, $str2);
 $sim = similar_text($str1, $str2);

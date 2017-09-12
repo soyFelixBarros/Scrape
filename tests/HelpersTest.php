@@ -18,10 +18,17 @@ class HelpersTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals('string', $str);
 	}
 
-	public function testSimilarStr()
+	public function testLevenshtein()
 	{
-		$int = $this->helpers->similar_str('string1', 'string2');
+		$l = levenshtein('string2', 'string2');
 
-		$this->assertEquals(0, $int);
+		$this->assertEquals(0, $l);
+	}
+
+	public function testSimilarText()
+	{
+		$s = similar_text('string2', 'string2');
+
+		$this->assertEquals(7, $s);
 	}
 }
