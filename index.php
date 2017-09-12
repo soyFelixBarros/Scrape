@@ -9,22 +9,22 @@ use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 
 $str = new Str;
 
-$str1 = 'string2';
-$str2 = 'string2';
+// $str1 = 'string2';
+// $str2 = 'string2';
 
-// $lev = levenshtein($str1, $str2);
-$sim = similar_text($str1, $str2);
+// // $lev = levenshtein($str1, $str2);
+// $sim = similar_text($str1, $str2);
 
-echo $str1.'<br>';
-echo $str2.'<br><br>';
-// echo 'Levenshtein: '.$lev.'<br>';
-echo 'Similitud: '.$sim.'<br><br>';
+// echo $str1.'<br>';
+// echo $str2.'<br><br>';
+// // echo 'Levenshtein: '.$lev.'<br>';
+// echo 'Similitud: '.$sim.'<br><br>';
 
-if ($sim >= 40) {
-	echo 'Es similar. Actualizar!';
-} else {
-	echo 'No es similar. Agregar!';
-}
+// if ($sim >= 40) {
+// 	echo 'Es similar. Actualizar!';
+// } else {
+// 	echo 'No es similar. Agregar!';
+// }
 
 // $fs = new Filesystem();
 // $dir = './tmp/pages/';

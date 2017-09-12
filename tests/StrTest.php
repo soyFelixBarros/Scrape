@@ -20,7 +20,7 @@ class StrTest extends PHPUnit_Framework_TestCase
 
 	public function testRemoveMultiSpaces()
 	{
-		$str = $this->str->remove_multi_spaces('string1  string2');
+		$str = $this->str->remove_multi_spaces('string1   string2');
 
 		$this->assertEquals('string1 string2', $str);
 	}
