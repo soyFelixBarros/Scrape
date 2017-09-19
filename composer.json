@@ -1,5 +1,5 @@
 {
-    "name": "felix/scrape",
+    "name": "soyFelixBarros/Scrape",
     "description": "Caja de herramientas para raspar una web.",
     "type": "project",
     "license": "MIT",
@@ -20,5 +20,5 @@
     "autoload": {
         "psr-4": {"Felix\\Scrape\\": "src"}
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "stable",
 }
