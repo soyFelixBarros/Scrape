@@ -1,7 +1,7 @@
 {
     "name": "felix/scrape",
     "description": "Caja de herramientas para raspar una web.",
-    "type": "project",
+    "type": "library",
     "license": "MIT",
     "authors": [
         {
