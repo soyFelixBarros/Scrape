@@ -12,7 +12,8 @@
     "require": {
         "php": ">=5.5.0",
         "symfony/dom-crawler": "^3.2",
-        "symfony/filesystem": "^3.3"
+        "symfony/filesystem": "^3.3",
+        "spatie/url": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "4.* || 5.*"
