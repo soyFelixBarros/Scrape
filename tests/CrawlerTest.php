@@ -1,10 +1,8 @@
 <?php
 
-namespace Felix\Scrape;
-
 use Felix\Scrape\Crawler;
 
-class CrawlerTest extends \PHPUnit_Framework_TestCase
+class CrawlerTest extends PHPUnit_Framework_TestCase
 {
     /**
      * Obtener el HTML de una página web.
