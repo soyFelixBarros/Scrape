@@ -10,7 +10,7 @@ class Crawler
     protected $html = '';
     protected $content = '';
 
-    public function start(string $url = '', string $xpath = '')
+    public function start(string $url, string $xpath)
     {
         $html = $this->getHtml($url);
 
