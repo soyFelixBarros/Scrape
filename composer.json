@@ -1,6 +1,7 @@
 {
     "name": "felix/scrape",
     "description": "Caja de herramientas para raspar una web.",
+    "homepage": "https://github.com/soyFelixBarros/Scrape",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -10,16 +11,19 @@
         }
     ],
     "require": {
-        "php": ">=5.5.0",
-        "symfony/dom-crawler": "^3.2",
-        "symfony/filesystem": "^3.3",
-        "spatie/url": "dev-master"
+        "php": ">=7.0.0",
+        "symfony/dom-crawler": "^3.2"
     },
     "require-dev": {
-        "phpunit/phpunit": "4.* || 5.*"
+        "phpunit/phpunit": "~6.0"
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
     },
     "autoload": {
-        "psr-4": {"Felix\\Scrape\\": "src"}
+        "psr-4": {
+            "Felix\\Scrape\\": "src"
+        }
     },
     "minimum-stability": "dev"
 }

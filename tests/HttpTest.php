@@ -1,8 +1,10 @@
 <?php
 
+namespace Felix\Scrape;
+
 use Felix\Scrape\Http;
 
-class HttpTest extends PHPUnit_Framework_TestCase 
+class HttpTest extends \PHPUnit_Framework_TestCase 
 {
 	protected $http;
 

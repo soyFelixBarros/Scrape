@@ -1,8 +1,10 @@
 <?php
 
+namespace Felix\Scrape;
+
 use Felix\Scrape\Str;
 
-class StrTest extends PHPUnit_Framework_TestCase 
+class StrTest extends \PHPUnit_Framework_TestCase 
 {
 	protected $str;
 
