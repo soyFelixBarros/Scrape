@@ -11,7 +11,7 @@ class CrawlerTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetHtml()
     {
-        $crawler = new Crawler();
+        $crawler = new Crawler;
 
         $html = $crawler->getHtml('https://example.com');
         
@@ -23,7 +23,7 @@ class CrawlerTest extends \PHPUnit_Framework_TestCase
      */
     public function testCrawlerStart()
     {
-        $crawler = new Crawler();
+        $crawler = new Crawler;
         $content = $crawler->start('https://example.com', '/html/body/div/h1');
         
         $this->assertContains('Example Domain', $content->text());
