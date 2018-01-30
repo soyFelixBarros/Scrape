@@ -18,12 +18,10 @@
     "require-dev": {
         "phpunit/phpunit": "4.* || 5.*"
     },
-    "scripts": {
-        "test": "vendor/bin/phpunit"
-    },
     "autoload": {
         "psr-4": {
             "Felix\\Scraper\\": "src"
         }
-    }
+    },
+    "minimum-stability": "dev"
 }
