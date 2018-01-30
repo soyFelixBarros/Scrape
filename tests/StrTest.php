@@ -32,7 +32,7 @@ class StrTest extends PHPUnit_Framework_TestCase
 	{
 		$str = ' &nbsp; string1  string2 &nbsp; ';
 
-		$str = $this->str->clean($str);
+		$str = Str::clean($str);
 		
 		$this->assertEquals('string1 string2', $str);
 	}

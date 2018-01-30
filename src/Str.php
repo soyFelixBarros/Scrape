@@ -39,10 +39,10 @@ class Str
 	 * 
 	 * @return string
 	 */
-	public function clean(string $str)
+	public static function clean(string $str)
 	{
-		$str = $this->remove_spaces($str);
-		$str = $this->remove_multi_spaces($str);
+		$str = self::remove_spaces($str);
+		$str = self::remove_multi_spaces($str);
 
 		return $str;
 	}
