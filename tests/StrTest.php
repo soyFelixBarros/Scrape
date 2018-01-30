@@ -24,4 +24,16 @@ class StrTest extends PHPUnit_Framework_TestCase
 
 		$this->assertEquals('string1 string2', $str);
 	}
+
+	/**
+	 * Limpiar texto. 
+	 */
+	public function testCleanAStringOfCharacters()
+	{
+		$str = ' &nbsp; string1  string2 &nbsp; ';
+
+		$str = $this->str->clean($str);
+		
+		$this->assertEquals('string1 string2', $str);
+	}
 }

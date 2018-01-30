@@ -31,4 +31,19 @@ class Str
 		
 		return $str;
 	}
+
+	/**
+	 * Limpiar una cadena de caracteres.
+	 * 
+	 * @param string $str Cadena de caracteres a limpiar. 
+	 * 
+	 * @return string
+	 */
+	public function clean(string $str)
+	{
+		$str = $this->remove_spaces($str);
+		$str = $this->remove_multi_spaces($str);
+
+		return $str;
+	}
 }
