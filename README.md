@@ -3,7 +3,7 @@
 > Raspar una web y obtener su contenido.
 
 ```bash
-composer install felix/scraper
+composer require felix/scraper
 ```
 
 ## Desarrolladores
