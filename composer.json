@@ -1,7 +1,8 @@
 {
-    "name": "felix/scrape",
-    "description": "Caja de herramientas para raspar una web.",
-    "homepage": "https://github.com/soyFelixBarros/Scrape",
+    "name": "felix/scraper",
+    "description": "Librería para raspar una web.",
+    "homepage": "https://github.com/soyFelixBarros/Scraper",
+    "keywords": ["web", "scraping"],
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -24,6 +25,5 @@
         "psr-4": {
             "Felix\\Scrape\\": "src"
         }
-    },
-    "minimum-stability": "dev"
+    }
 }

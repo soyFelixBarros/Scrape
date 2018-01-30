@@ -1,6 +1,7 @@
 # Registro de cambios
 
-Todos los cambios importantes en `felix/scrape` se documentarán en este archivo.
+Todos los cambios importantes en `felix/scraper` se documentarán en este archivo.
 
-## v1.4.0 - 2018-01-30
-- Primer lanzamiento
+## v1.4.* - 2018-01-30
+- 1 - Cambiamos el nombre de la  librería a `felix/scraper`
+- 0 - Primer lanzamiento
