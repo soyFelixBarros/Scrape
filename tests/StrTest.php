@@ -1,6 +1,6 @@
 <?php
 
-use Felix\Scrape\Str;
+use Felix\Scraper\Str;
 
 class StrTest extends PHPUnit_Framework_TestCase 
 {

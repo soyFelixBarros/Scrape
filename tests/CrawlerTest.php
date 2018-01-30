@@ -1,6 +1,6 @@
 <?php
 
-use Felix\Scrape\Crawler;
+use Felix\Scraper\Crawler;
 
 class CrawlerTest extends PHPUnit_Framework_TestCase
 {

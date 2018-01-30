@@ -23,7 +23,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Felix\\Scrape\\": "src"
+            "Felix\\Scraper\\": "src"
         }
     }
 }

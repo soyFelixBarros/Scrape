@@ -2,11 +2,15 @@
 
 > Raspar una web y obtener su contenido.
 
+```bash
+composer install felix/scraper
+```
+
 ## Desarrolladores
 
 ### Instalación
 
-Desde la terminal vamos a comenzar clonando el proyecto e instalando las dependencias:
+Clonando el proyecto e instalando las dependencias:
 
 ```bash
 git clone https://github.com/soyFelixBarros/Scraper.git

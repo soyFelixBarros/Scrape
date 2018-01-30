@@ -1,6 +1,6 @@
 <?php
 
-namespace Felix\Scrape;
+namespace Felix\Scraper;
 
 class Str
 {

@@ -1,6 +1,6 @@
 <?php
 
-use Felix\Scrape\Http;
+use Felix\Scraper\Http;
 
 class HttpTest extends PHPUnit_Framework_TestCase 
 {
