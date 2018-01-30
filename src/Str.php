@@ -10,7 +10,7 @@ class Str
 	 * @param  string $str Cada de texto.
 	 * @return string
 	 */
-	public function remove_spaces($str)
+	public static function remove_spaces($str)
 	{
 		$str = html_entity_decode($str);
 		$str = str_replace("\xc2\xa0", '', $str);
@@ -25,7 +25,7 @@ class Str
 	 * @param  string $str Cada de texto.
 	 * @return string
 	 */
-	public function remove_multi_spaces($str)
+	public static function remove_multi_spaces($str)
 	{
 		$str = preg_replace('!\s+!', ' ', $str);
 		
@@ -39,7 +39,7 @@ class Str
 	 * 
 	 * @return string
 	 */
-	public static function clean(string $str)
+	public static function clean($str)
 	{
 		$str = self::remove_spaces($str);
 		$str = self::remove_multi_spaces($str);
