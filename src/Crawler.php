@@ -20,6 +20,7 @@ class Crawler
 
     /**
      * Obtener el contenido HTML de una página.
+     * 
      * @param string $url Url de la página a scrapear
      * @return string
      */

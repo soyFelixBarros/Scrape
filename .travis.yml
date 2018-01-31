@@ -15,11 +15,11 @@ before_script:
   - composer dump-autoload
 
 script:
-  - vendor/bin/phpunit  --coverage-text --coverage-clover=coverage.clover
+  - vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
 
 after_script:
   - wget https://scrutinizer-ci.com/ocular.phar
-  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
+  - if [ "$COLLECT_COVERAGE" == "true" ]; then php ocular.phar code-coverage:upload --format=php-clover coverage.clover; fi
 
 branches:
   only:
