@@ -22,11 +22,14 @@ cd scraper
 composer install
 ```
 
-Correr tests:
+Pruebas:
 
 ```bash
 vendor/bin/phpunit
 ```
+## Licencia MIT
+
+Por favor, consulte el [Archivo de licencia](LICENSE.md) para obtener más información.
 
 ------
 
