@@ -29,7 +29,7 @@ vendor/bin/phpunit
 ```
 ## Licencia MIT
 
-Por favor, consulte el [Archivo de licencia](LICENSE.md) para obtener más información.
+Por favor, consulte el [archivo de licencia](LICENSE.md) para obtener más información.
 
 ------
 
