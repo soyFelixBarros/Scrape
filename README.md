@@ -1,4 +1,10 @@
-# Scraper [![Build Status](https://travis-ci.org/soyFelixBarros/Scraper.svg?branch=master)](https://travis-ci.org/soyFelixBarros/Scraper)
+# Scraper
+
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/crawler.svg?style=flat-square)](https://packagist.org/packages/felix/scraper)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+[![Build Status](https://img.shields.io/travis/soyFelixBarros/Scraper/master.svg?style=flat-square)](https://travis-ci.org/soyFelixBarros/Scraper)
+[![StyleCI](https://styleci.io/repos/102618762/shield)](https://styleci.io/repos/102618762)
+[![Total Downloads](https://img.shields.io/packagist/dt/felix/scraper.svg?style=flat-square)](https://packagist.org/packages/felix/scraper)
 
 > Raspar una web y obtener su contenido.
 
