@@ -2,6 +2,10 @@
 
 > Raspar una web y obtener su contenido.
 
+## Instalando Scraper
+
+La forma recomendada de instalar Scraper es a través de [Composer](https://getcomposer.org/). Ejecute el siguiente comando para instalar la última versión estable de Scraper:
+
 ```bash
 composer require felix/scraper
 ```
