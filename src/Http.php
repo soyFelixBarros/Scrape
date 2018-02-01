@@ -7,7 +7,9 @@ class Http
 	/**
 	 * Comprobar si un enlace devuelve un codigo 200 OK.
 	 *
+	 *
 	 * @param  string $link Enlace a comprobar.
+	 *
 	 * @return boolean
 	 */
 	public function linkIsOk($link) {

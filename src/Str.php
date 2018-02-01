@@ -8,6 +8,7 @@ class Str
 	 * Eliminar espacios en blanco de una cadena.
 	 * 
 	 * @param  string $str Cada de texto.
+	 *
 	 * @return string
 	 */
 	public static function remove_spaces($str)
@@ -23,6 +24,7 @@ class Str
 	 * Eliminar multiples espacios en blanco entre dos cadenas.
 	 * 
 	 * @param  string $str Cada de texto.
+	 * 
 	 * @return string
 	 */
 	public static function remove_multi_spaces($str)
