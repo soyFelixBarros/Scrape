@@ -36,6 +36,9 @@ class Crawler
 
     /**
      * Almacenar el codigo HTML.
+     *
+     * @param string $html
+     * @param string $xpath
      */
     public function setContent($html, $xpath)
     {
