@@ -10,7 +10,7 @@ class CrawlerTest extends PHPUnit_Framework_TestCase
      */
     public function testGetHtml()
     {
-        $crawler = new Crawler;
+        $crawler = new Crawler();
 
         $html = $crawler->getHtml('https://example.com');
         
@@ -22,7 +22,7 @@ class CrawlerTest extends PHPUnit_Framework_TestCase
      */
     public function testCrawlerStart()
     {
-        $crawler = new Crawler;
+        $crawler = new Crawler();
         $content = $crawler->start('https://example.com', '/html/body/div/h1');
         
         $this->assertContains('Example Domain', $content->text());
@@ -33,7 +33,7 @@ class CrawlerTest extends PHPUnit_Framework_TestCase
      */
     public function testGetTitleAndClear()
     {
-        $crawler = new Crawler;
+        $crawler = new Crawler();
         $html = "<html><body><h3> &nbsp; Example  Domain</h3></body></html>";
         $crawler->setContent($html, '//h3');
         $str = Str::clean($crawler->getContent()->text());
