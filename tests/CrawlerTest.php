@@ -1,7 +1,7 @@
 <?php
 
-use Felix\Scraper\Str;
 use Felix\Scraper\Crawler;
+use Felix\Scraper\Str;
 
 class CrawlerTest extends PHPUnit_Framework_TestCase
 {
@@ -13,7 +13,7 @@ class CrawlerTest extends PHPUnit_Framework_TestCase
         $crawler = new Crawler();
 
         $html = $crawler->getHtml('https://example.com');
-        
+
         $this->assertContains('<h1>Example Domain</h1>', $html);
     }
 
@@ -24,7 +24,7 @@ class CrawlerTest extends PHPUnit_Framework_TestCase
     {
         $crawler = new Crawler();
         $content = $crawler->start('https://example.com', '/html/body/div/h1');
-        
+
         $this->assertContains('Example Domain', $content->text());
     }
 
@@ -34,10 +34,10 @@ class CrawlerTest extends PHPUnit_Framework_TestCase
     public function testGetTitleAndClear()
     {
         $crawler = new Crawler();
-        $html = "<html><body><h3> &nbsp; Example  Domain</h3></body></html>";
+        $html = '<html><body><h3> &nbsp; Example  Domain</h3></body></html>';
         $crawler->setContent($html, '//h3');
         $str = Str::clean($crawler->getContent()->text());
-        
+
         $this->assertEquals('Example Domain', $str);
     }
 }
