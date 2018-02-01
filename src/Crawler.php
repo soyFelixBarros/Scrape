@@ -37,7 +37,7 @@ class Crawler
     /**
      * Almacenar el codigo HTML.
      */
-    public function setContent(string $html, string $xpath)
+    public function setContent($html, $xpath)
     {
         $crawler = new \Symfony\Component\DomCrawler\Crawler($html);
         $this->content = $crawler->evaluate($xpath);
