@@ -4,6 +4,7 @@ namespace Felix\Scraper;
 
 class Http
 {
+
 	/**
 	 * Comprobar si un enlace devuelve un codigo 200 OK.
 	 *
@@ -14,7 +15,7 @@ class Http
 	 */
 	public function linkIsOk($link) {
 		$headers = @get_headers($link);
-
-	    return 200 === (int) substr($headers[0], 9, 3);
+		
+		return 200 === (int) substr($headers[0], 9, 3);
 	}
 }

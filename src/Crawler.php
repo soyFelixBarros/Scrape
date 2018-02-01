@@ -21,10 +21,10 @@ class Crawler
 
     /**
      * Obtener el contenido HTML de una página.
-     * 
-     * 
+     *
+     *
      * @param string $url Url de la página a scrapear
-     * 
+     *
      * @return string
      */
     public function getHtml(string $url)
@@ -44,7 +44,7 @@ class Crawler
     }
 
     /**
-     * Obtner el contenido. 
+     * Obtner el contenido.
      */
     public function getContent()
     {
@@ -52,15 +52,15 @@ class Crawler
     }
 
     /**
-     * Obtner la URL. 
+     * Obtner la URL.
      */
     public function getUrl()
     {
         return $this->url;
     }
 
-    /** 
-     * Guardar el tiempo de espera de una página. 
+    /**
+     * Guardar el tiempo de espera de una página.
      */
     public function setTimeout(int $timeout)
     {

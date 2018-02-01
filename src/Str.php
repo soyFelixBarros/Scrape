@@ -4,6 +4,7 @@ namespace Felix\Scraper;
 
 class Str
 {
+
 	/**
 	 * Eliminar espacios en blanco de una cadena.
 	 * 
