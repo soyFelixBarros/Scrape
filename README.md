@@ -14,8 +14,6 @@
 Necesitas:
 
 - **PHP> = 7.0**, pero se recomienda la última versión estable de PHP
-- la extensión `mbstring`
--  la extensión `intl`
 
 ## Instalando Scraper
 
