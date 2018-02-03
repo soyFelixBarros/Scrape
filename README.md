@@ -9,6 +9,14 @@
 
 > Raspar una web y obtener su contenido.
 
+## Requisitos del sistema
+
+Necesitas:
+
+- **PHP> = 7.0**, pero se recomienda la última versión estable de PHP
+- la extensión `mbstring`
+-  la extensión `intl`
+
 ## Instalando Scraper
 
 La forma recomendada de instalar Scraper es a través de [Composer](https://getcomposer.org/). Ejecute el siguiente comando para instalar la última versión estable de Scraper:
