@@ -35,11 +35,16 @@ cd scraper
 composer install
 ```
 
-Pruebas:
+### Cambios
+
+Por favor, vea [CHANGELOG](CHANGELOG.md) para más información sobre lo que ha cambiado recientemente.
+
+### Pruebas
 
 ```bash
 vendor/bin/phpunit
 ```
+
 ## Licencia MIT
 
 Por favor, consulte el [archivo de licencia](LICENSE.md) para obtener más información.
