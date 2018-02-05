@@ -46,4 +46,14 @@ class UrlTest extends PHPUnit_Framework_TestCase
 	{
         $this->assertEquals(true,  $this->url->hasHost());
     }
+
+    /**
+     * /post-title -> http://example.com/post-title
+     */
+    public function testNormalizeUrl()
+    {
+        $schemeAndHost = 'http://www.datachaco.com';
+
+        $this->assertEquals('http://www.datachaco.com/noticias/index_seccion/Politíca',  $this->url->normalize($schemeAndHost));
+    }
 }
