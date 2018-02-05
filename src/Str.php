@@ -4,7 +4,6 @@ namespace Felix\Scraper;
 
 class Str
 {
-
 	/**
 	 * Eliminar espacios en blanco de una cadena.
 	 * 
@@ -34,7 +33,7 @@ class Str
 		
 		return $str;
 	}
-
+	
 	/**
 	 * Limpiar una cadena de caracteres.
 	 * 

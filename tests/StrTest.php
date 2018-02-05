@@ -4,9 +4,6 @@ use Felix\Scraper\Str;
 
 class StrTest extends PHPUnit_Framework_TestCase
 {
-	/**
-	 *
-	 */
 	public function testRemoveSpaces()
 	{
 		$str = Str::remove_spaces(' &nbsp; string  &nbsp; ');
@@ -14,9 +11,6 @@ class StrTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals('string', $str);
 	}
 
-	/**
-	 *	
-	 */
 	public function testRemoveMultiSpaces()
 	{
 		$str = Str::remove_multi_spaces('string1   string2');
@@ -24,9 +18,6 @@ class StrTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals('string1 string2', $str);
 	}
 
-	/**
-	 * Limpiar texto. 
-	 */
 	public function testCleanAStringOfCharacters()
 	{
 		$str = ' &nbsp; string1  string2 &nbsp; ';
