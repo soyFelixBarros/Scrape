@@ -34,23 +34,13 @@ class Url
     }
 
     /**
-     * Url tiene un esquema.
+     * Url tiene una parte.
      * 
      * @return boolean true|false
      */
-    public function hasScheme()
+    public function has($part)
     {
-        return $this->part('scheme') !== null;
-    }
-
-    /**
-     * Url tiene un dominio.
-     * 
-     * @return boolean true|false
-     */
-    public function hasHost()
-    {
-        return $this->part('host') !== null;
+        return $this->part($part) !== null;
     }
 
     /**
@@ -74,7 +64,7 @@ class Url
      */
     public function normalize($schemeAndHost)
     {
-        if (! $this->hasScheme()) {
+        if (!$this->has('host') || !$this->has('scheme')) {
             $this->url = $schemeAndHost.$this->url;
         }
 

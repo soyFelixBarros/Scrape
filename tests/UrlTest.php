@@ -17,23 +17,13 @@ class UrlTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Url tiene un esquema.
+     * Url tiene una parte.
      */
-	public function testHasScheme()
+	public function testHasPart()
 	{
         $url = new Url('//example.com');
 
-        $this->assertEquals(false, $url->hasScheme());
-    }
-
-    /**
-     * Url tiene un dominio.
-     */
-	public function testHasHost()
-	{
-        $url = new Url('/post-title');
-
-        $this->assertEquals(false, $url->hasHost());
+        $this->assertEquals(false, $url->has('scheme')); // Ej. scheme, host, path, etc.
     }
 
     /**
