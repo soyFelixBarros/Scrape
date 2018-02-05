@@ -4,7 +4,10 @@ namespace Felix\Scraper;
 
 class Url
 {
+    /** @var string */
     protected $url;
+
+    /** @var array */
     protected $parts;
 
     public function __construct($url)
@@ -13,6 +16,11 @@ class Url
         $this->parts = parse_url($url);
     }
 
+    public function __toString()
+    {
+        return $this->url;
+    }
+    
     /**
      * Obtener una parte de la URL.
      * 
@@ -20,7 +28,7 @@ class Url
      * 
      * @return string|null
      */
-    public function getPart($part)
+    public function part($part)
     {
         return array_key_exists($part, $this->parts) ? $this->parts[$part] : null;
     }
@@ -32,7 +40,7 @@ class Url
      */
     public function hasScheme()
     {
-        return $this->getPart('scheme') !== null;
+        return $this->part('scheme') !== null;
     }
 
     /**
@@ -42,24 +50,34 @@ class Url
      */
     public function hasHost()
     {
-        return $this->getPart('host') !== null;
+        return $this->part('host') !== null;
+    }
+
+    /**
+     *  Decodificación URL.
+     * 
+     * @return object
+     */
+    public function decode()
+    {
+        $this->url = urldecode($this->url);
+        
+        return $this;
     }
 
     /**
      * Dada una URL, normaliza esa URL.
      * 
-     * @param $url string Url base (Ej. http://example.com)
+     * @param $schemeAndHost string Esquema y dominio base (Ej. http://example.com)
      * 
      * @return string  
      */
     public function normalize($schemeAndHost)
     {
-        $url = urldecode($this->url);
-
         if (! $this->hasScheme()) {
-            $url = $schemeAndHost.$url;
+            $this->url = $schemeAndHost.$this->url;
         }
 
-        return $url;
+        return $this;
     }
 }

@@ -12,23 +12,13 @@ class UrlTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * /Polit%C3%ADca -> /Politíca 
-     */
-    public function testUrlDecode()
-    {
-        $path = urldecode($this->url->getPart('path'));
-
-        $this->assertEquals('/noticias/index_seccion/Politíca', $path);
-    }
-
-    /**
      * example.com = true
      * 
      * @see http://php.net/manual/es/function.parse-url.php
      */
     public function testGetPart()
     {
-        $this->assertEquals('/noticias/index_seccion/Polit%C3%ADca', $this->url->getPart('path'));
+        $this->assertEquals('/noticias/index_seccion/Polit%C3%ADca', $this->url->part('path'));
     }
 
     /**
@@ -48,12 +38,20 @@ class UrlTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * Decodificación url
+     */
+	public function testUrlDecode()
+	{
+        $this->assertEquals('http://www.datachaco.com/noticias/index_seccion/Politíca',  $this->url->decode());
+    }
+
+    /**
      * /post-title -> http://example.com/post-title
      */
     public function testNormalizeUrl()
     {
         $schemeAndHost = 'http://www.datachaco.com';
 
-        $this->assertEquals('http://www.datachaco.com/noticias/index_seccion/Politíca',  $this->url->normalize($schemeAndHost));
+        $this->assertEquals('http://www.datachaco.com/noticias/index_seccion/Polit%C3%ADca',  $this->url->normalize($schemeAndHost));
     }
 }
