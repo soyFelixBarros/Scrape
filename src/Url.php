@@ -20,7 +20,7 @@ class Url
     {
         return $this->url;
     }
-    
+
     /**
      * Obtener una parte de la URL.
      *
