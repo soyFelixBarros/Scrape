@@ -27,17 +27,4 @@ class CrawlerTest extends PHPUnit_Framework_TestCase
 
         $this->assertContains('Example Domain', $content->text());
     }
-
-    /**
-     * Obtener la cadena de caracteres entre dos etiquetas y limpiarla.
-     */
-    public function testGetTitleAndClear()
-    {
-        $crawler = new Crawler();
-        $html = '<html><body><h3> &nbsp; Example  Domain</h3></body></html>';
-        $crawler->setContent($html, '//h3');
-        $str = Str::clean($crawler->getContent()->text());
-
-        $this->assertEquals('Example Domain', $str);
-    }
 }
