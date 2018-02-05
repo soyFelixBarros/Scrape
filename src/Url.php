@@ -23,9 +23,9 @@ class Url
     
     /**
      * Obtener una parte de la URL.
-     * 
+     *
      * @param $part string Parte de la URL (Ej: host).
-     * 
+     *
      * @return string|null
      */
     public function part($part)
@@ -35,8 +35,8 @@ class Url
 
     /**
      * Url tiene una parte.
-     * 
-     * @return boolean true|false
+     *
+     * @return bool true|false
      */
     public function has($part)
     {
@@ -44,23 +44,23 @@ class Url
     }
 
     /**
-     *  Decodificación URL.
-     * 
+     * Decodificación URL.
+     *
      * @return object
      */
     public function decode()
     {
         $this->url = urldecode($this->url);
-        
+
         return $this;
     }
 
     /**
      * Dada una URL, normaliza esa URL.
-     * 
+     *
      * @param $schemeAndHost string Esquema y dominio base (Ej. http://example.com)
-     * 
-     * @return string  
+     *
+     * @return string
      */
     public function normalize($schemeAndHost)
     {
