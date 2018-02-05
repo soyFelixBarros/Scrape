@@ -4,13 +4,6 @@ use Felix\Scraper\Url;
 
 class UrlTest extends PHPUnit_Framework_TestCase
 {
-    protected $url;
-    
-    public function __construct()
-    {
-        $this->url = new Url('http://www.datachaco.com/noticias/index_seccion/Polit%C3%ADca');
-    }
-
     /**
      * example.com = true
      * 
@@ -18,7 +11,9 @@ class UrlTest extends PHPUnit_Framework_TestCase
      */
     public function testGetPart()
     {
-        $this->assertEquals('/noticias/index_seccion/Polit%C3%ADca', $this->url->part('path'));
+        $url = new Url('/post-title');
+
+        $this->assertEquals('/post-title', $url->part('path'));
     }
 
     /**
@@ -26,7 +21,9 @@ class UrlTest extends PHPUnit_Framework_TestCase
      */
 	public function testHasScheme()
 	{
-        $this->assertEquals(true,  $this->url->hasScheme());
+        $url = new Url('//example.com');
+
+        $this->assertEquals(false, $url->hasScheme());
     }
 
     /**
@@ -34,7 +31,9 @@ class UrlTest extends PHPUnit_Framework_TestCase
      */
 	public function testHasHost()
 	{
-        $this->assertEquals(true,  $this->url->hasHost());
+        $url = new Url('/post-title');
+
+        $this->assertEquals(false, $url->hasHost());
     }
 
     /**
@@ -42,7 +41,10 @@ class UrlTest extends PHPUnit_Framework_TestCase
      */
 	public function testUrlDecode()
 	{
-        $this->assertEquals('http://www.datachaco.com/noticias/index_seccion/Politíca',  $this->url->decode());
+        $path = '/post?title=example';
+        $url = new Url(urlencode($path));
+
+        $this->assertEquals($path,  $url->decode());
     }
 
     /**
@@ -50,8 +52,9 @@ class UrlTest extends PHPUnit_Framework_TestCase
      */
     public function testNormalizeUrl()
     {
-        $schemeAndHost = 'http://www.datachaco.com';
+        $schemeAndHost = 'http://example.com';
+        $url = new Url('/post-title');
 
-        $this->assertEquals('http://www.datachaco.com/noticias/index_seccion/Polit%C3%ADca',  $this->url->normalize($schemeAndHost));
+        $this->assertEquals('http://example.com/post-title',  $url->normalize($schemeAndHost));
     }
 }
