@@ -10,20 +10,20 @@ class UrlTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals('/post-title', $url->part('path'));
     }
-
-	public function testHasPart()
-	{
+    
+    public function testHasPart()
+    {
         $url = new Url('//example.com');
-
+     
         $this->assertEquals(false, $url->has('scheme')); // Ej. scheme, host, path, etc.
     }
 
-	public function testUrlDecode()
+    public function testUrlDecode()
 	{
         $path = '/post?title=example';
         $url = new Url(urlencode($path));
 
-        $this->assertEquals($path,  $url->decode());
+        $this->assertEquals($path, $url->decode());
     }
 
     public function testNormalizeUrl()
