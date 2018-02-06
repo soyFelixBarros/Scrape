@@ -1,1 +1,4 @@
-preset: recommended
+preset: psr2
+finder:
+  path:
+    - "src"
