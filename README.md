@@ -9,18 +9,26 @@
 
 > Raspar una web y obtener su contenido.
 
-## Requisitos del sistema
+## Instalar
 
-Necesitas:
+Necesitas *PHP >= 7.0*, pero se recomienda la última versión estable de PHP.
 
-- **PHP> = 7.0**, pero se recomienda la última versión estable de PHP
-
-## Instalando Scraper
-
-La forma recomendada de instalar Scraper es a través de [Composer](https://getcomposer.org/). Ejecute el siguiente comando para instalar la última versión estable de Scraper:
+La forma recomendada de instalar Scraper en tu proyecto es a través de [Composer](https://getcomposer.org/). Ejecute el siguiente comando para instalar la última versión estable de Scraper:
 
 ```bash
 composer require felix/scraper
+```
+
+## Usar
+
+```php
+use Felix\Scraper\Crawler;
+
+$crawler = Crawler('https://example.com', '/html/body/div/h1');
+$crawler->start();
+
+return $crawler->getContent()->text(); // Example Domain
+
 ```
 
 ## Desarrolladores
