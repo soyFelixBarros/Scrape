@@ -18,19 +18,18 @@ class Crawler
 
     /**
      * Obtener el HTML y parsear su contenido.
-     * 
+     *
      * @return void
      */
     public function start()
     {
         $html = $this->html($this->url);
-        
+
         $this->setContent($html, $this->xpath);
     }
 
     /**
      * Obtener el contenido HTML de una página.
-     *
      *
      * @param string $url Url de la página a scrapear
      *
@@ -45,7 +44,7 @@ class Crawler
 
     /**
      * Obtener el contenido.
-     * 
+     *
      * @return string
      */
     public function getContent()
