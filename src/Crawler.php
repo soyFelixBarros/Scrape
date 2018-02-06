@@ -5,18 +5,27 @@ namespace Felix\Scraper;
 class Crawler
 {
     protected $timeout = 60;
-    protected $url = '';
-    protected $xpath = '';
-    protected $html = '';
-    protected $content = '';
+    protected $url;
+    protected $xpath;
+    protected $html;
+    protected $content;
 
-    public function start(string $url, string $xpath)
+    public function __construct($url, $xpath = '//')
     {
-        $html = $this->getHtml($url);
+        $this->url = $url;
+        $this->xpath = $xpath;
+    }
 
-        $this->setContent($html, $xpath);
-
-        return $this->content;
+    /**
+     * Obtener el HTML y parsear su contenido.
+     * 
+     * @return void
+     */
+    public function start()
+    {
+        $html = $this->html($this->url);
+        
+        $this->setContent($html, $this->xpath);
     }
 
     /**
@@ -27,11 +36,21 @@ class Crawler
      *
      * @return string
      */
-    public function getHtml(string $url)
+    public function html()
     {
-        $this->html = @file_get_contents($url);
+        $this->html = @file_get_contents($this->url);
 
         return $this->html;
+    }
+
+    /**
+     * Obtener el contenido.
+     * 
+     * @return string
+     */
+    public function getContent()
+    {
+        return $this->content;
     }
 
     /**
@@ -44,14 +63,6 @@ class Crawler
     {
         $crawler = new \Symfony\Component\DomCrawler\Crawler($html);
         $this->content = $crawler->evaluate($xpath);
-    }
-
-    /**
-     * Obtner el contenido.
-     */
-    public function getContent()
-    {
-        return $this->content;
     }
 
     /**

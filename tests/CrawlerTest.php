@@ -9,9 +9,9 @@ class CrawlerTest extends PHPUnit_Framework_TestCase
      */
     public function testGetHtml()
     {
-        $crawler = new Crawler();
+        $crawler = new Crawler('https://example.com');
 
-        $html = $crawler->getHtml('https://example.com');
+        $html = $crawler->html();
 
         $this->assertContains('<h1>Example Domain</h1>', $html);
     }
@@ -21,9 +21,9 @@ class CrawlerTest extends PHPUnit_Framework_TestCase
      */
     public function testCrawlerStart()
     {
-        $crawler = new Crawler();
-        $content = $crawler->start('https://example.com', '/html/body/div/h1');
+        $crawler = new Crawler('https://example.com', '/html/body/div/h1');
+        $crawler->start();
 
-        $this->assertContains('Example Domain', $content->text());
+        $this->assertContains('Example Domain', $crawler->getContent()->text());
     }
 }
