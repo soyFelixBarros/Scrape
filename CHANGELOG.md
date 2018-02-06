@@ -2,7 +2,7 @@
 
 Todos los cambios importantes en `felix/scraper` se documentarán en este archivo.
 
-## v1.4.5 - 2018-01-30
+## v1.4.5 - 2018-02-06
 - Agregado métodos para normalizar url [#1](https://github.com/soyFelixBarros/Scraper/issues/1)
 - Agregado estilo de codificación [#2](https://github.com/soyFelixBarros/Scraper/issues/2)
 
