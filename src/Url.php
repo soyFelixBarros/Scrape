@@ -10,15 +10,37 @@ class Url
     /** @var array */
     protected $parts;
 
+    /** @var string */
+    protected $hash;
+
     public function __construct($url)
     {
-        $this->url = $url;
-        $this->parts = parse_url($url);
+        $this->setParts($url);
     }
 
     public function __toString()
     {
         return $this->url;
+    }
+
+    /**
+     * Parsear URL.
+     * 
+     * @param $url string Toda la url.
+     * 
+     * @return void
+     */
+    function setParts($url)
+    {
+        $parts = parse_url($url);
+
+        if ($parts === false) {
+            throw new Exception($url.' es una URL mal formada y no se puede procesar');
+        }
+
+        $this->url = $url;
+        $this->parts = $parts;
+        $this->hash = md5($url);
     }
 
     /**
