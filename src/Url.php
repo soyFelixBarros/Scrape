@@ -25,12 +25,12 @@ class Url
 
     /**
      * Parsear URL.
-     * 
+     *
      * @param $url string Toda la url.
-     * 
+     *
      * @return void
      */
-    function setParts($url)
+    public function setParts($url)
     {
         $parts = parse_url($url);
 
