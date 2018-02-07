@@ -33,4 +33,12 @@ class UrlTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals('http://example.com/post-title', $url->normalize($schemeAndHost));
     }
+
+    public function testIfHashUrl()
+    {
+        $baseUrl = 'http://example.com/';
+        $url = new Url($baseUrl);
+
+        $this->assertEquals(md5($baseUrl), $url->getHash());
+    }
 }

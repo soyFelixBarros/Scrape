@@ -35,12 +35,22 @@ class Url
         $parts = parse_url($url);
 
         if ($parts === false) {
-            throw new Exception($url.' es una URL mal formada y no se puede procesar');
+            throw new \Exception($url.' es una URL mal formada y no se puede procesar');
         }
 
         $this->url = $url;
         $this->parts = $parts;
         $this->hash = md5($url);
+    }
+
+    /**
+     * Retornar hash url.
+     * 
+     * @return string
+     */
+    public function getHash()
+    {
+        return $this->hash;
     }
 
     /**
