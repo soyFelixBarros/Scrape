@@ -45,7 +45,7 @@ class Url
 
     /**
      * Retornar hash url.
-     * 
+     *
      * @return string
      */
     public function getHash()
