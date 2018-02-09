@@ -5,13 +5,13 @@ namespace Felix\Scraper;
 class Url
 {
     /** @var string */
-    protected $url;
+    private $url;
 
     /** @var array */
-    protected $parts;
+    private $parts;
 
     /** @var string */
-    protected $hash;
+    private $hash;
 
     public function __construct($url)
     {
@@ -100,6 +100,6 @@ class Url
             $this->url = $schemeAndHost.$this->url;
         }
 
-        return $this;
+        return $this->url;
     }
 }
