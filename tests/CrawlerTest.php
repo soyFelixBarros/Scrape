@@ -5,25 +5,12 @@ use Felix\Scraper\Crawler;
 class CrawlerTest extends PHPUnit_Framework_TestCase
 {
     /**
-     * Obtener el HTML de una página web.
+     * Extraer los datos de una web.
      */
-    public function testGetHtml()
+    public function testExtractData()
     {
-        $crawler = new Crawler('https://example.com');
+        $data = Crawler::extracting('https://example.com', '//html/body/div/h1');
 
-        $html = $crawler->html();
-
-        $this->assertContains('<h1>Example Domain</h1>', $html);
-    }
-
-    /**
-     * Ejecutar el crawler.
-     */
-    public function testCrawlerStart()
-    {
-        $crawler = new Crawler('https://example.com', '/html/body/div/h1');
-        $crawler->start();
-
-        $this->assertContains('Example Domain', $crawler->getContent()->text());
+        $this->assertContains('Example Domain', $data->text());
     }
 }
