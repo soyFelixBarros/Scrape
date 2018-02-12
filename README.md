@@ -24,10 +24,9 @@ composer require felix/scraper
 ```php
 use Felix\Scraper\Crawler;
 
-$crawler = new Crawler('https://example.com', '/html/body/div/h1');
-$crawler->start();
+$data = Crawler::extracting('https://example.com', '//html/body/div/h1')
 
-return $crawler->getContent()->text(); // Example Domain
+return $data->text(); // Example Domain
 
 ```
 
