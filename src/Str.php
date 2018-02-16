@@ -31,7 +31,7 @@ class Str
     private function set($str)
     {
         $str = html_entity_decode($str);
-		$str = str_replace("\xc2\xa0", "", $str);
+        $str = str_replace("\xc2\xa0", "", $str);
         $str = trim($str);
         $str = preg_replace("!\s+!", " ", $str);
 
@@ -39,12 +39,11 @@ class Str
     }
     
     /**
-	 * Limpiar una cadena de caracteres.
-	 *
-	 * @param string $str Cadena de caracteres a limpiar. 
-	 *
-	 * @return string
-	 */
+     * Limpiar una cadena de caracteres.
+     * 
+     * @param string $str Cadena de caracteres a limpiar.
+     * @return string
+     */
     public function get()
     {
         return $this->str;
