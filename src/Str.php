@@ -40,8 +40,9 @@ class Str
     
     /**
      * Limpiar una cadena de caracteres.
-     * 
+     *
      * @param string $str Cadena de caracteres a limpiar.
+     *
      * @return string
      */
     public function get()
