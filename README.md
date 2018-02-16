@@ -41,6 +41,7 @@ Limpiar los datos extraídos usando la clase `Str` y el método `clear()`:
 use Felix\Scraper\Str;
 
 $str = Str::clean("&nbsp; String  Examples \n")->get();
+
 return $str; // String Examples
 ```
 
