@@ -21,13 +21,27 @@ composer require felix/scraper
 
 ## Usar
 
+### Raspar página web
+
+Para obtener el contenido de una página web usamos el método `extractring()`, pasándole la **URL** y el **XPATH**:
+
 ```php
 use Felix\Scraper\Crawler;
 
 $data = Crawler::extracting('https://example.com', '//html/body/div/h1')
 
 return $data->text(); // Example Domain
+```
 
+### Limpiar datos
+
+Limpiar los datos extraídos usando la clase `Str` y el método `clear()`:
+
+```php
+use Felix\Scraper\Str;
+
+$str = Str::clean("&nbsp; String  Examples \n")->get();
+return $str; // String Examples
 ```
 
 ## Desarrolladores
