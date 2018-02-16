@@ -97,7 +97,7 @@ class Url
     public function normalize($schemeAndHost)
     {
         if (!$this->has('host') || !$this->has('scheme')) {
-            $this->url = $schemeAndHost.$this->url;
+            $this->url = rtrim($schemeAndHost, '/').'/'.ltrim($this->url, '/');
         }
 
         return $this->url;

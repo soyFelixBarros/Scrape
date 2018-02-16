@@ -28,7 +28,7 @@ class UrlTest extends PHPUnit_Framework_TestCase
 
     public function testNormalizeUrl()
     {
-        $schemeAndHost = 'http://example.com';
+        $schemeAndHost = 'http://example.com/';
         $url = new Url('/post-title');
 
         $this->assertEquals('http://example.com/post-title', $url->normalize($schemeAndHost));
