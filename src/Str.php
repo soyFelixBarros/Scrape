@@ -7,23 +7,25 @@ class Str
     private $str = null;
     private static $instance = null;
     
-    private function __construct($str = '') {
-       $this->set($str);
+    private function __construct($str = '')
+    {
+        $this->set($str);
     }
-    
-    public static function clean($str = '') {
+
+    public static function clean($str = '')
+    {
         if (! isset(static::$instance)) {
             self::$instance = new Str($str);
         }
         
-        return self::$instance; 
+        return self::$instance;
     }
 
     /**
      * Limpiar la cadena y almacenar.
-     * 
+     *
      * @param $str string Cadena de caracteres a limpiar.
-     * 
+     *
      * @return void
      */
     private function set($str)
@@ -35,16 +37,16 @@ class Str
 
         $this->str = $str;
     }
-
-	/**
+    
+    /**
 	 * Limpiar una cadena de caracteres.
-	 * 
+	 *
 	 * @param string $str Cadena de caracteres a limpiar. 
-	 * 
+	 *
 	 * @return string
 	 */
-	public function get()
-	{
-		return $this->str;
-	}
+    public function get()
+    {
+        return $this->str;
+    }
 }
