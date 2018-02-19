@@ -40,7 +40,7 @@ Limpiar los datos extraídos usando la clase `Str` y el método `clear()`:
 ```php
 use Felix\Scraper\Str;
 
-$str = Str::clean("&nbsp; String  Examples \n")->get();
+$str = Str::clean("&nbsp; String  Examples \n");
 
 return $str; // String Examples
 ```
