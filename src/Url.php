@@ -88,14 +88,14 @@ class Url
     }
 
     /**
-     * Agregar el esquema si no tiene.
-     * 
+     * Agregar http a url.
+     *
      * @return string $url
      */
-    public function addScheme()
+    public function addScheme($scheme = 'http://')
     {
         if (!$this->has('scheme')) {
-            $this->url = "http://" . ltrim($this->url, '/');
+            $this->url = $scheme . ltrim($this->url, '/');
         }
 
         return $this->url;

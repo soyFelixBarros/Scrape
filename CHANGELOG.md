@@ -2,6 +2,9 @@
 
 Todos los cambios importantes en `felix/scraper` se documentarán en este archivo.
 
+## v1.4.12 - 2018-02-22
+- Metodo para agregar http a url: `$url->addScheme(string $scheme = "http://")`.
+
 ## v1.4.9 - 2018-02-16
 - Nuevo metodo para limpiar una cadena de caracteres: `Str::clean($str)->get()` - [#3](https://github.com/soyFelixBarros/Scraper/issues/3)
 
