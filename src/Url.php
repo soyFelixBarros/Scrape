@@ -88,6 +88,20 @@ class Url
     }
 
     /**
+     * Agregar el esquema si no tiene.
+     * 
+     * @return string $url
+     */
+    public function addScheme()
+    {
+        if (!$this->has('scheme')) {
+            $this->url = "http://" . ltrim($this->url, '/');
+        }
+
+        return $this->url;
+    }
+
+    /**
      * Dada una URL, normaliza esa URL.
      *
      * @param $schemeAndHost string Esquema y dominio base (Ej. http://example.com)
