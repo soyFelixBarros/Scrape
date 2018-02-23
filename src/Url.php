@@ -4,54 +4,8 @@ namespace Felix\Scraper;
 
 class Url
 {
-    /** @var string */
-    private $url;
-
     /** @var array */
-    private $parts;
-
-    /** @var string */
-    private $hash;
-
-    public function __construct($url)
-    {
-        $this->setParts($url);
-    }
-
-    public function __toString()
-    {
-        return $this->url;
-    }
-
-    /**
-     * Parsear URL.
-     *
-     * @param $url string Toda la url.
-     *
-     * @return void
-     */
-    public function setParts($url)
-    {
-        $parts = parse_url($url);
-
-        if ($parts === false) {
-            throw new \Exception($url.' es una URL mal formada y no se puede procesar');
-        }
-
-        $this->url = $url;
-        $this->parts = $parts;
-        $this->hash = md5($url);
-    }
-
-    /**
-     * Retornar hash url.
-     *
-     * @return string
-     */
-    public function getHash()
-    {
-        return $this->hash;
-    }
+    private static $parts;
 
     /**
      * Obtener una parte de la URL.
@@ -60,9 +14,9 @@ class Url
      *
      * @return string|null
      */
-    public function part($part)
+    public static function part($part)
     {
-        return array_key_exists($part, $this->parts) ? $this->parts[$part] : null;
+        return array_key_exists($part, self::$parts) ? self::$parts[$part] : null;
     }
 
     /**
@@ -70,50 +24,61 @@ class Url
      *
      * @return bool true|false
      */
-    public function has($part)
+    public static function has($part)
     {
-        return $this->part($part) !== null;
+        return self::part($part) !== null;
     }
 
     /**
-     * Decodificación URL.
+     * Agregar host a url.
      *
-     * @return object
+     * @param $url string Url
+     * @param $host string Dominio
+     *
+     * @return string
      */
-    public function decode()
+    public static function addHost($url, $host)
     {
-        $this->url = urldecode($this->url);
-
-        return $this;
+        return rtrim($host, '/') . $url;
     }
 
     /**
      * Agregar http a url.
      *
+     * @param $url string Url
+     * @param $scheme string Esquema
+     *
      * @return string $url
      */
-    public function addScheme($scheme = 'http://')
+    public static function addScheme($url, $scheme = 'http://')
     {
-        if (!$this->has('scheme')) {
-            $this->url = $scheme . ltrim($this->url, '/');
-        }
-
-        return $this->url;
+        return $scheme . ltrim($url, '/');
     }
 
     /**
-     * Dada una URL, normaliza esa URL.
+     * Normalizar URL.
      *
+     * @param $url string Url a normalizar.
      * @param $schemeAndHost string Esquema y dominio base (Ej. http://example.com)
      *
      * @return string
      */
-    public function normalize($schemeAndHost)
+    public static function normalize($url, $host = null)
     {
-        if (!$this->has('host') || !$this->has('scheme')) {
-            $this->url = rtrim($schemeAndHost, '/').'/'.ltrim($this->url, '/');
+        self::$parts = parse_url($url);
+
+        if (self::$parts === false) {
+            throw new \Exception($url.' es una URL mal formada y no se puede procesar');
         }
 
-        return $this->url;
+        if (! self::part('host') && $host !== null) {
+            return self::addHost($url, $host);
+        }
+
+        if (! self::part('scheme')) {
+            $url = self::addScheme($url);
+        }
+
+        return $url;
     }
 }

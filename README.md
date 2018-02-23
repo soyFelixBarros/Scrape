@@ -35,14 +35,22 @@ return $data->text(); // Example Domain
 
 ### Limpiar datos
 
-Limpiar los datos extraídos usando la clase `Str` y el método `clear()`:
-
 ```php
 use Felix\Scraper\Str;
 
 $str = Str::clean("&nbsp; String  Examples \n");
 
-return $str; // String Examples
+return $str; // -> String Examples
+```
+
+### Normalizar URL
+
+```php
+use Felix\Scraper\Url;
+
+$url = Url::normalize('//example.com/post-title');
+
+return $url; // -> http://example.com/post-title
 ```
 
 ## Desarrolladores

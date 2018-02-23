@@ -2,6 +2,9 @@
 
 Todos los cambios importantes en `felix/scraper` se documentarán en este archivo.
 
+## v1.4.13 - 2018-02-23
+- Metodo para normalizar URLs: `Url::normalize(string $url)`.
+
 ## v1.4.12 - 2018-02-22
 - Metodo para agregar http a url: `$url->addScheme(string $scheme = "http://")`.
 
