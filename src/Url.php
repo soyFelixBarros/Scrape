@@ -56,6 +56,18 @@ class Url
     }
 
     /**
+     * Decode unreserved characters
+     *
+     * @param $url string Url.
+     *
+     * @return string
+     */
+    public static function decodeUnreserved($url)
+    {
+        return str_replace('–', '%E2%80%93', $url);
+    }
+
+    /**
      * Normalizar URL.
      *
      * @param $url string Url a normalizar.
@@ -72,13 +84,15 @@ class Url
         }
 
         if (! self::part('host') && $host !== null) {
-            return self::addHost($url, $host);
+            $url = self::addHost($url, $host);
         }
 
-        if (! self::part('scheme')) {
+        if (! self::part('scheme') && self::part('host')) {
             $url = self::addScheme($url);
         }
 
+        $url = self::decodeUnreserved($url);
+        
         return $url;
     }
 }
