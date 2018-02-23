@@ -62,9 +62,14 @@ class Url
      *
      * @return string
      */
-    public static function decodeUnreserved($url)
+    public static function encode($url)
     {
-        return str_replace('–', '%E2%80%93', $url);
+        $components = explode("/", $url);
+        $end = array_pop($components);
+        array_push($components, rawurlencode($end));
+        $url = implode("/", $components);
+
+        return $url;
     }
 
     /**
@@ -91,7 +96,7 @@ class Url
             $url = self::addScheme($url);
         }
 
-        $url = self::decodeUnreserved($url);
+        $url = self::encode($url);
         
         return $url;
     }
