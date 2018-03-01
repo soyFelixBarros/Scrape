@@ -39,7 +39,7 @@ class Url
      */
     public static function addHost($url, $host)
     {
-        return rtrim($host, '/') . $url;
+        return rtrim($host, '/') . '/' . $url;
     }
 
     /**
