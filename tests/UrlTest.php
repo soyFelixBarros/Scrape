@@ -8,8 +8,8 @@ class UrlTest extends PHPUnit_Framework_TestCase
     {
         $urls = array(
             'post–title',
+            '/post–title',
             '//example.com/notix2/post–title',
-            'http://example.com/notix2/post–title',
             'http://example.com/notix2/post–title'
         );
         

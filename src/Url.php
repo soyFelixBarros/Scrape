@@ -2,6 +2,8 @@
 
 namespace Felix\Scraper;
 
+use URL\Normalizer;
+
 class Url
 {
     /** @var array */
@@ -52,7 +54,9 @@ class Url
      */
     public static function addScheme($url, $scheme = 'http://')
     {
-        return $scheme . ltrim($url, '/');
+        $url = $scheme . ltrim($url, '/');
+        
+        return $url;
     }
 
     /**
@@ -92,7 +96,7 @@ class Url
             $url = self::addHost($url, $host);
         }
 
-        if (! self::part('scheme') && self::part('host')) {
+        if (self::part('host') && self::part('host')) {
             $url = self::addScheme($url);
         }
 
